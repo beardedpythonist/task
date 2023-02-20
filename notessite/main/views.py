@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from .modelst import *
+
+from .forms import TaskForm
+from .models import *
 
 def index(request):
     task = Task.objects.all()
@@ -22,5 +24,3 @@ def create(request):
     form = TaskForm()
     context ={'form': form, 'error': error}
     return render(request, 'main/create.html', context)
-
-
