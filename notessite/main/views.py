@@ -12,6 +12,7 @@ def about(request):
     return render(request, 'main/about.html')
 
 
+
 def create(request):
     error = ''
     if request.method == "POST":
@@ -22,5 +23,6 @@ def create(request):
         else:
             error = 'Error'
     form = TaskForm()
+
     context ={'form': form, 'error': error}
     return render(request, 'main/create.html', context)
